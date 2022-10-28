@@ -1,19 +1,16 @@
 export abstract class Discount {
-  abstract calculate(value: number): number;
+  protected discount = 0;
+
+  calculate(value: number): number {
+    return value - value * this.discount;
+  }
 }
 
 export class FiftyPercentDiscount extends Discount {
-  calculate(value: number): number {
-    return value - value * 0.5;
-  }
+  protected readonly discount = 0.5;
 }
 export class TenPercentDiscount extends Discount {
-  calculate(value: number): number {
-    return value - value * 0.1;
-  }
+  protected readonly discount = 0.1;
 }
-export class NoDiscount extends Discount {
-  calculate(value: number): number {
-    return value;
-  }
-}
+// eslint-disable-next-line prettier/prettier
+export class NoDiscount extends Discount { }
