@@ -1,0 +1,1 @@
+# LSV - Liskov Substitution principle
